@@ -3,18 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Angor | Decentralized Kickstarter</title>
     <meta
       name="description"
       content="A premium landing page concept for Angor, the Bitcoin-native decentralized crowdfunding protocol."
     />
+    <script>
+      (function () {
+        var deployVersion = "20260416-2";
+        var url = new URL(window.location.href);
+
+        if (url.searchParams.get("v") === deployVersion) {
+          return;
+        }
+
+        url.searchParams.set("v", deployVersion);
+        window.location.replace(url.toString());
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260416-2" />
   </head>
   <body>
     <div class="ambient ambient-one"></div>
@@ -373,6 +389,6 @@
       </main>
     </div>
 
-    <script src="./main.js"></script>
+    <script src="./main.js?v=20260416-2"></script>
   </body>
 </html>
